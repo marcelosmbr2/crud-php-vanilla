@@ -7,7 +7,6 @@ return new class extends Migration {
         $config = require __DIR__ . '/../../config/database.php';
         
         if ($config['database'] === 'sqlite') {
-            // Sintaxe para SQLite
             $sql = "
                 CREATE TABLE IF NOT EXISTS users (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,7 +25,6 @@ return new class extends Migration {
             $this->db->exec("CREATE INDEX IF NOT EXISTS idx_email ON users(email)");
             
         } else {
-            // Sintaxe para MySQL
             $sql = "
                 CREATE TABLE IF NOT EXISTS users (
                     id INT AUTO_INCREMENT PRIMARY KEY,

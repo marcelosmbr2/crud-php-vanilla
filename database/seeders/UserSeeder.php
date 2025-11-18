@@ -6,10 +6,8 @@ class UserSeeder extends Seeder {
     public function run(): void {
         echo "Populando tabela 'users'...\n";
         
-        // Limpa a tabela antes
         $this->truncate('users');
         
-        // Dados de exemplo
         $users = [
             [
                 'name' => 'João Silva',
