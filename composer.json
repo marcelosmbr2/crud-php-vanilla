@@ -1,0 +1,17 @@
+{
+    "name": "marcelosmbr/php-crud",
+    "description": "Simple CRUD with PHP vanilla",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marcelosmbr",
+            "email": "marcelosmbr.dev@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
