@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-50">
-    <php?= $content ?>
+    <?= $content ?>
     <!-- Flowbite JS -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>

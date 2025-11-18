@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'database' => 'sqlite', // sqlite or mysql
     'host' => 'localhost',
     'dbname' => 'php-crud',
     'user' => 'root',

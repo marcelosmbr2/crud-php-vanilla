@@ -6,10 +6,12 @@ use App\Database\Connection;
 class Migrator {
     private PDO $db;
     private string $migrationsPath;
+    private array $config;
     
     public function __construct() {
         $this->db = Connection::getInstance();
         $this->migrationsPath = __DIR__ . '/database/migrations';
+        $this->config = require __DIR__ . '/config/database.php';
     }
     
     public function run(): void {
@@ -89,14 +91,24 @@ class Migrator {
     }
     
     private function ensureMigrationsTable(): void {
-        $sql = "
-            CREATE TABLE IF NOT EXISTS migrations (
+        if ($this->config['database'] === 'sqlite') {
+            // Sintaxe para SQLite
+            $sql = "CREATE TABLE IF NOT EXISTS migrations (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                migration TEXT NOT NULL,
+                batch INTEGER NOT NULL,
+                executed_at TEXT DEFAULT CURRENT_TIMESTAMP
+            )";
+        } else {
+            // Sintaxe para MySQL
+            $sql = "CREATE TABLE IF NOT EXISTS migrations (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 migration VARCHAR(255) NOT NULL,
                 batch INT NOT NULL,
                 executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        ";
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+        }
+        
         $this->db->exec($sql);
     }
     

@@ -5,7 +5,7 @@ ob_start();
 
 <div class="max-w-2xl mx-auto">
     <div class="bg-white rounded-lg shadow-md p-6">
-        <h1 class="text-2xl font-bold text-gray-900 mb-6">Novo Usuário</h1>
+        <h1 class="text-2xl font-bold text-gray-900 mb-6">Create User</h1>
 
         <?php if (isset($_SESSION['error'])): ?>
             <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded mb-4">
@@ -16,7 +16,7 @@ ob_start();
 
         <form action="/users/store" method="POST" class="space-y-4">
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input 
                     type="text" 
                     name="name" 
@@ -44,13 +44,13 @@ ob_start();
                     type="submit" 
                     class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
                 >
-                    Salvar
+                    Save
                 </button>
                 <a 
                     href="/users" 
                     class="flex-1 bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-center"
                 >
-                    Cancelar
+                    Cancel
                 </a>
             </div>
         </form>

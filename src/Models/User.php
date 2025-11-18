@@ -12,7 +12,7 @@ class User {
     }
     
     public function getAll(): array {
-        $stmt = $this->db->query("SELECT * FROM users ORDER BY id DESC");
+        $stmt = $this->db->query("SELECT * FROM users ORDER BY id ASC");
         return $stmt->fetchAll();
     }
     

@@ -1,7 +1,7 @@
 <?php
 
 $host = $argv[1] ?? 'localhost';
-$port = $argv[2] ?? '8000';
+$port = $argv[2] ?? '8800';
 $root = 'public';
 
 echo "═══════════════════════════════════════════════════\n";
